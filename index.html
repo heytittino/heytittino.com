@@ -3,97 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>heytittino</title>
+    <title>heytittino - Developer & Creator</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">heytittino</div>
+            <ul class="nav-links">
+                <li><a href="#about">about</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
     <section class="hero">
-
-        <h1>heytittino</h1>
-
-        <p class="tagline">
-            i build things.
-        </p>
-
-        <div class="tags">
-            <span>minecraft.</span>
-            <span>web.</span>
-            <span>apis.</span>
-            <span>experiments.</span>
+        <h1 class="hero-title">heytittino</h1>
+        <p class="hero-subtitle">creative developer & builder</p>
+        
+        <!-- About Box -->
+        <div class="about-box" id="about">
+            <div class="about-text">
+                <p>i'm heytittino. i love building minecraft projects, creating websites, developing apis, and experimenting with cool ideas. passionate about clean code and creative solutions.</p>
+            </div>
         </div>
 
-        <div class="scroll">
-            scroll ↓
+        <div class="scroll-indicator">
+            <span>scroll to explore</span>
+            <div class="scroll-arrow">↓</div>
         </div>
-
     </section>
 
-    <section>
-        <h2>about</h2>
-
-        <p>
-            i'm heytittino. i enjoy building minecraft projects,
-            websites, api tools and random ideas that seem fun.
-        </p>
-    </section>
-
-    <section>
+    <!-- Skills Section -->
+    <section class="skills-section">
         <h2>what i do</h2>
-
-        <div class="card">
-            🎮 minecraft projects
-        </div>
-
-        <div class="card">
-            🌐 web development
-        </div>
-
-        <div class="card">
-            🔌 api development
-        </div>
-
-        <div class="card">
-            ⚡ experiments
-        </div>
-    </section>
-
-    <section>
-        <h2>programming languages</h2>
-
-        <div class="card">JavaScript</div>
-        <div class="card">HTML</div>
-        <div class="card">CSS</div>
-        <div class="card">Python</div>
-    </section>
-
-    <section>
-        <h2>projects</h2>
-
-        <div class="card">
-            Project #1
-        </div>
-
-        <div class="card">
-            Project #2
-        </div>
-
-        <div class="card">
-            Project #3
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">🎮</div>
+                <h3>Minecraft</h3>
+                <p>Building plugins, mods, and creative projects</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <h3>Web Dev</h3>
+                <p>Modern websites and web applications</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔌</div>
+                <h3>APIs</h3>
+                <p>RESTful and scalable backend solutions</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">⚡</div>
+                <h3>Experiments</h3>
+                <p>Exploring new ideas and technologies</p>
+            </div>
         </div>
     </section>
 
-    <section>
+    <!-- Tech Stack -->
+    <section class="tech-section">
+        <h2>tech stack</h2>
+        <div class="tech-grid">
+            <div class="tech-tag">JavaScript</div>
+            <div class="tech-tag">HTML/CSS</div>
+            <div class="tech-tag">Python</div>
+            <div class="tech-tag">Node.js</div>
+            <div class="tech-tag">React</div>
+            <div class="tech-tag">Java</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <h2>featured projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                <div class="project-content">
+                    <h3>Project Alpha</h3>
+                    <p>A minecraft plugin system with advanced features and customization options.</p>
+                    <div class="project-tags">
+                        <span>Minecraft</span>
+                        <span>Java</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                <div class="project-content">
+                    <h3>Web Dashboard</h3>
+                    <p>Interactive dashboard for managing and visualizing project data in real-time.</p>
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                <div class="project-content">
+                    <h3>API Framework</h3>
+                    <p>Lightweight and scalable REST API framework for rapid development.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Backend</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                <div class="project-content">
+                    <h3>Experimental Tool</h3>
+                    <p>Innovative tool exploring new possibilities in creative computing.</p>
+                    <div class="project-tags">
+                        <span>Experiment</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Currently Working On -->
+    <section class="building-section">
         <h2>currently building</h2>
-
-        <div class="card">→ Minecraft projects</div>
-        <div class="card">→ Web tools</div>
-        <div class="card">→ API experiments</div>
-        <div class="card">→ Whatever seems fun</div>
+        <div class="building-list">
+            <div class="building-item">
+                <span class="building-icon">→</span>
+                <span>Advanced Minecraft Plugin Suite</span>
+            </div>
+            <div class="building-item">
+                <span class="building-icon">→</span>
+                <span>Full-Stack Web Platform</span>
+            </div>
+            <div class="building-item">
+                <span class="building-icon">→</span>
+                <span>Creative AI Experiments</span>
+            </div>
+            <div class="building-item">
+                <span class="building-icon">→</span>
+                <span>Whatever seems fun next</span>
+            </div>
+        </div>
     </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>let's connect</h2>
+        <p class="contact-text">interested in collaborating or have a cool idea? reach out!</p>
+        
+        <div class="social-links">
+            <a href="https://github.com" class="social-link" title="GitHub">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="https://twitter.com" class="social-link" title="Twitter">
+                <i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+            </a>
+            <a href="mailto:hello@heytittino.com" class="social-link" title="Email">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+            <a href="https://discord.com" class="social-link" title="Discord">
+                <i class="fab fa-discord"></i>
+                <span>Discord</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 heytittino. all rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 
