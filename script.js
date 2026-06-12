@@ -1,14 +1,22 @@
 console.log("heytittino portfolio loaded");
 
+const scrollIndicator = document.querySelector('.scroll-indicator');
+const hero = document.querySelector('.hero');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const navbar = document.querySelector('.navbar');
+            const offset = navbar ? navbar.offsetHeight + 16 : 0;
+            const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
+
+            window.scrollTo({
+                top: targetTop,
+                behavior: 'smooth'
             });
         }
     });
@@ -35,20 +43,30 @@ document.querySelectorAll('.skill-card, .project-card, .building-item, .tech-tag
     observer.observe(el);
 });
 
-// Parallax effect on scroll
-window.addEventListener('scroll', () => {
+const updateScrollState = () => {
     const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    if (hero && !prefersReducedMotion) {
+        hero.style.transform = `translateY(${Math.min(scrolled * 0.08, 24)}px)`;
     }
-});
+
+    if (scrollIndicator) {
+        scrollIndicator.classList.toggle('is-hidden', scrolled > 80);
+    }
+};
+
+// Parallax effect on scroll
+window.addEventListener('scroll', updateScrollState, { passive: true });
+updateScrollState();
 
 // Add active state to navigation
 window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY + 100;
     
     document.querySelectorAll('section').forEach(section => {
+        if (!section.id) {
+            return;
+        }
+
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
@@ -81,6 +99,11 @@ if (heroTitle) {
     };
     
     window.addEventListener('load', () => {
+        if (prefersReducedMotion) {
+            heroTitle.textContent = text;
+            return;
+        }
+
         setTimeout(typeWriter, 300);
     });
 }

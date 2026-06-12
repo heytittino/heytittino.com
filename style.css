@@ -17,6 +17,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
 }
 
 body {
@@ -74,6 +75,7 @@ body {
 
 /* Hero Section */
 .hero {
+    position: relative;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -81,7 +83,12 @@ body {
     align-items: center;
     text-align: center;
     padding: 6rem 2rem 2rem;
-    margin-top: 3rem;
+    overflow: hidden;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-title {
@@ -111,6 +118,7 @@ body {
     margin: 2rem auto;
     animation: fadeInUp 0.8s ease-out 0.2s both;
     transition: all 0.3s;
+    scroll-margin-top: 6.5rem;
 }
 
 .about-box:hover {
@@ -127,6 +135,13 @@ body {
 .scroll-indicator {
     margin-top: 4rem;
     animation: fadeInUp 0.8s ease-out 0.3s both;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-indicator.is-hidden {
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
 }
 
 .scroll-indicator span {
@@ -156,6 +171,7 @@ section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 6rem 2rem;
+    scroll-margin-top: 6.5rem;
 }
 
 h2 {
@@ -458,6 +474,18 @@ h2::after {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
     }
 }
 
